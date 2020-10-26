@@ -1,0 +1,19 @@
+main .container{
+    background-color: rgb(255, 247, 164);
+}
+
+.container img{
+    width: 35vmin;
+    height: 35vmin;
+    float: left;
+    margin: 5px;
+    margin-right: 10px;
+}
+.container .content .para{
+    font-size: 3vmin;
+}
+
+.container h1{
+    font-size: 3.5vmax;
+    color: rgb(107, 76, 46);
+}

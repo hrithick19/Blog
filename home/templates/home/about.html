@@ -1,0 +1,69 @@
+{%extends 'home/layout.html' %}
+{%block title%}
+அறிமுகம்
+{%endblock%}
+{%block head%}
+{%load static%}
+<link rel="stylesheet" href="{% static 'home/css/about.css'%}">
+<meta name="description" content="அகராதி-யின் அறிமுகம் ,சமூகவலைத்தளம் (Aharathi's Bio details and social media sites)">
+<meta name="keywords" content="தமிழ்,அகராதி,Aharathi,tamil">
+{%endblock%}
+{%block main%}
+    <div class="container emp-profile">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="{% static 'home/empty-fe.jpg' %}" class="img-fluid" alt="Profile">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                                <h5>
+                                    அகராதி 
+                                </h5>
+                                <h6>
+                                    எழுத்தாளர் 
+                                </h6>
+                        <ul class="nav nav-tabs" id="myTab">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab">அறிமுகம்  </a>
+                            </li>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-work">
+                        <p>சமூக வலைதளம் </p>
+                        <a class="instagram" href=""><i class="fab fa-instagram"></i> இன்ஸ்டாகிராம்</a><br/>
+                        <a class="facebook" href=""> <i class="fab fa-facebook"></i> முகநூல்</a><br/>
+                        <a class="twitter" href=""><i class="fab fa-twitter"></i> ட்விட்டர்</a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="show active" id="home">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>பெயர் </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>அகராதி  </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>மின்-அஞ்சல் </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>aharathi26@gmail.com</p>
+                                        </div>
+                                    </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>           
+    </div>
+{%endblock%}

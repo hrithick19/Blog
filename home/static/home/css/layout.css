@@ -1,0 +1,43 @@
+@font-face {
+    src:url(fonts/Kavivanar-Regular.ttf) ;
+    font-family: navbar-links;
+  }
+  @font-face {
+    src:url(fonts/Coiny-Regular.ttf) ;
+    font-family: logo;
+  }
+  nav {
+    background-color: #a80d0d;
+    box-shadow: 5px 10px 18px #c10f0f;
+  }
+  nav .dropdown-menu :active
+  {
+    background-color: #d42c2c;
+  }
+  body>nav>div>ul>li>a{
+    font-family: navbar-links;
+    font-weight: bolder;
+    display: inline-block;
+    margin: 0 10px 0 ;
+    letter-spacing: 3px;
+  }
+
+  
+nav .navbar-brand{
+    font-family: logo;
+    color: white !important;
+    margin: 0 10px 0 ;
+  }
+  
+  body{
+      background-color: #a80d0d; 
+  } 
+
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    margin-top: 0;
+  }
+  

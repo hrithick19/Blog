@@ -1,0 +1,35 @@
+{%extends 'home/layout.html' %}
+  {%block head%}
+  <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@600&display=swap" rel="stylesheet">
+    {% load static %} 
+    <link href="{% static 'Post/css/full_katturai.css' %}" rel="stylesheet">
+    <meta name="keywords" content="{{katt.katturai_title}},tamil {{katt.katturai_title}} essay,tamil {{katt.katturai_title}} katturai,tamils essays on {{katt.katturai_title}}">
+  {%endblock%}    
+  {%block title%}
+    {{katt.katturai_title}}    
+  {%endblock%}
+  {%block main%}
+  <main>
+    <div class="container mt-3 mb-3 p-2">
+      <div class="heading">
+        <h1 class="text-center">
+          <strong>{{katt.katturai_title}}</strong>    
+        </h1>
+        <hr>
+      </div>
+      <div class="content p-3">
+        <img src="{{katt.image.url}}" class="img-fluid" alt="{{katt.image_alt}}">
+        <div class="para">
+          {{katt.katturai_content|safe}}
+        </div>
+      </div>
+    </div>
+  </main>
+  {%endblock%}
+  {%block footer%}
+  <div class="bg-light py-2 w-100">
+    <div class="container text-center">
+      <p class="text-muted mb-0 py-2">© 2020 All rights reserved.</p>
+    </div>
+  </div>
+{%endblock%}

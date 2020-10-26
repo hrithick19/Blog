@@ -1,0 +1,114 @@
+@font-face {
+    src:url(fonts/Kavivanar-Regular.ttf) ;
+    font-family: navbar-links;
+  }
+  @font-face {
+    src:url(fonts/Coiny-Regular.ttf) ;
+    font-family: logo;
+  }
+  nav {
+    background-color: #a80d0d;
+    box-shadow: 5px 10px 18px #c10f0f;
+  }
+  nav .dropdown-menu :active
+  {
+    background-color: #d42c2c;
+  }
+  body>nav>div>ul>li>a{
+    font-family: navbar-links;
+    font-weight: bolder;
+    display: inline-block;
+    margin: 0 10px 0 ;
+    letter-spacing: 3px;
+  }
+  nav .navbar-brand{
+    font-family: logo;
+    color: white !important;
+    margin: 0 10px 0 ;
+  }
+  
+  body{
+      background-color: #a80d0d; 
+  }
+  
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    margin-top: 0;
+  }
+
+  main >.container{
+      padding: 20px 30px;
+      background-color: bisque;
+      border-radius:5px;
+  }
+  
+  main{
+    padding:20px;
+  }
+
+  li h6{
+    font-weight: 700;
+  }
+
+  li h6 a{
+    color:rgb(180, 6, 0);
+    font-size: 3vmin;
+  }
+
+  li h6 a:hover{
+    color:rgb(192, 45, 40);
+  }
+
+  li h6 sup{
+    font-size: 2vmin;
+  }
+
+  main ul {
+    list-style: non; /* Remove default bullets */
+    align-items: center;
+  }
+
+  main ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: red;
+    display: flex;
+    flex-direction: row;
+    margin-right:3px;
+  }
+
+  main li{
+    display: flex;
+    flex-direction: row;
+    ALIGN-ITEMS: baseline;
+  }
+
+  main >.container >h2{
+    text-align: center;
+    font-weight: 900;
+    font-size: 5vmin;
+    color: rgb(119, 0, 0);
+  }
+
+  footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+  }
+  
+  
+  html {
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+  }

@@ -1,0 +1,64 @@
+
+body .container{
+  padding:20px;
+}
+
+.card img{
+  padding:10px;
+}
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  margin-top: 0;
+}
+
+.footer{
+  display:flex;
+  flex-direction: row-reverse;
+  font-size:9px;
+}
+
+h1{
+  font-size: 1.2em;
+}
+p{
+  font-size: 0.9em;
+}
+
+.pagination{
+  color: rgb(255, 200, 97);
+  font-size: 2.6vmin;
+}
+
+.pagination a{
+  color:white;
+}
+
+ footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+.title{
+  padding-left: 3px;
+  border-left: red 5px solid;
+}

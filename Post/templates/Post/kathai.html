@@ -1,0 +1,78 @@
+{%extends 'home/layout.html' %}
+  {%block head%}
+    {% load static %} 
+    <link href="{% static 'Post/css/kathai.css' %}" rel="stylesheet">
+    <meta name="keywords" content="அகராதி,தமிழ்,தமிழ் கதைகள்,Aharathi's tamil stories,Tamil stories,tamil story,
+    {% for k in kathai %}
+    {{k.kadhai_title}},
+    {%endfor%}
+    ">
+    <meta name="description" content="அகராதி தமிழ் கதைகள்,Aharathi's tamil stories ">
+  {%endblock%}    
+    {%block title%}
+      தமிழ் கதைகள் | அகராதி
+    {%endblock%}
+  {%block main%}
+    <div class="outer-box">
+      <div class="container">
+        <div class="card">
+          {% for k in kathai %}
+          <div class="p-4">
+            <h5>{{k.kadhai_title}}</h5>
+            <p class="text-muted">{{k.kadhai_description}}<p>
+              <button class="btn btn-outline-danger"  onclick="on({{k.id}})">
+                படிக்க..
+              </button>
+              <div class="pub-time text-muted ">
+                பதிவு  : {{ k.pub_date|date:'d,M-Y H:i' }}
+              </div>
+          </div>
+          <div id="overlay{{k.id}}" >
+            <button type="button" class="close" aria-label="Close" onclick="off({{k.id}})">
+              <span aria-hidden="true"><img src="{% static 'Post/images/close.png'%}" alt="close button" style="width: 20px; height: 20px;"></span>
+            </button>
+            <div id="text">
+              <h3>{{k.kadhai_title}}</h3>
+              <div class="image">
+                <img src="{{k.image.url}}" alt="{{k.image.alt_text}}" class="img-thumbnail">
+              </div>
+              {{k.kadhai_content|safe|linebreaks}}</div>
+          </div>
+            <hr>
+            <script>
+              function on(a) {
+                document.getElementById("overlay"+a).style.display = "block";
+              }
+              
+              function off(a) {
+                document.getElementById("overlay"+a).style.display = "none";
+              }
+            </script>
+            <style>
+                  #overlay{{k.id}}{
+    overflow: hidden;
+    overflow-y: scroll;
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.915);
+    z-index: 2;
+  }
+            </style>
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+    {%endblock%}
+{%block footer%}  
+  <div class="bg-light py-2 w-100">
+    <div class="container text-center">
+      <p class="text-muted mb-0 py-2">© 2020 All rights reserved.</p>
+    </div>
+  </div>
+{%endblock%}

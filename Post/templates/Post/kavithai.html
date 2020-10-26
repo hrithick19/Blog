@@ -1,0 +1,80 @@
+{%extends 'home/layout.html' %}
+  {%block head%}
+    {% load static %} 
+    <link href="{% static 'Post/css/kavithai.css' %}" rel="stylesheet">
+    <meta name="keywords" content="அகராதி,தமிழ்,தமிழ் கவிதைகள்,tamil poems,tamil kavithaigal,tamil kavithai with image,Aharathi's tamil poems">
+    <meta name="description" content="அகராதி-யின் தமிழ் கவிதைகள் ,Aharathi's tamil kavithaigal"> 
+  {%endblock%}    
+    {%block title%}
+      வலைப்பதிவு-கவிதை
+    {%endblock%}
+  {%block main%}
+    <div class="container">
+      <main>
+        <div class="row">
+          <div class="row-cards">
+            {%for k in page_obj%}
+            <div class="col-md-9">
+                <div class="card mb-3 ">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img class="img-fluid h-100 w-100 ml-auto" src="{{k.image.url}}" alt="{{k.image_alt}}">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <div class="title">
+                                  <h1 class="card-title d-inline">
+                                    {{k.kavithai_title}}
+                                    {% if k in recent %}
+                                      <sup>
+                                        <span class="badge badge-pill badge-primary ">New</span>
+                                      </sup>
+                                      {% endif %}
+                                  </h1>
+                                </div>
+                                <p class="card-text">{{k.kavithai_content|safe|linebreaks}}</p>
+                                <p class="card-text"><small class="text-muted d-flex flex-row-reverse">~அகராதி </small></p>                            
+                                <div class="footer">
+                                  <div class="pub-time text-muted">
+                                    பதிவு  : {{ k.pub_date|date:'d,M-Y H:i' }}
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          {%endfor%} 
+            
+          <div class="pagination d-flex justify-content-center">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+        
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+    {%endblock%}
+
+{%block footer%}
+  <div class="bg-light py-2">
+    <div class="container text-center">
+      <p class="text-muted mb-0 py-2">© 2020 All rights reserved.</p>
+    </div>
+  </div>
+  </div>
+{%endblock%}

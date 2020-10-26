@@ -1,0 +1,45 @@
+{%extends 'home/layout.html' %}
+{%block title%}
+  முகப்பு - அகராதி .காம்
+{%endblock%}
+<meta name="keywords" content="தமிழ் கவிதைகள், தமிழ் கவிதை, கவிதைகள், கவிதை, Tamil Kavithaigal, Tamil Kavithai, Tamil, Kavithai, Kavithaigal, Tamil Poems, Poems, அகராதி.காம், Aharathi.com," />        
+<meta name="description" content="அகராதி .காம் .தொகுப்பு, தமிழ் கவிதைகள் (Tamil Kavithaigal), தமிழ் கதைகள் (Tamil kadhaigal), தமிழ் கவிதைகள் (Tamil katturaigal) போர்ட்ஃபோலியோ." /> 
+{%block head%}
+  {%load static%}
+    <link rel="stylesheet" href="{% static 'home/css/home.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@700&display=swap" rel="stylesheet">
+  {%endblock%}
+{%block main%}
+  <div class="main-container">
+    <main class="text-center  d-flex h-100 align-items-center ">
+        <div class="container ">
+        <h2 class="text-center" >நல்வரவு!!!</h2>
+        <p  class="text-center" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo asperiores explicabo quos veniam id laborum animi voluptas! Aliquid nam veritatis illo id labore quisquam rerum repudiandae maiores tempore, at nihil!</p>            <br>
+        <div class=" d-flex justify-content-center main-button ">
+          <div class="row">
+            <div class="col-sm-6">
+              <form action="{% url 'home:contact' %}">
+                <button type="submit" class="btn btn-outline-light">தொடர்புக்கு</button>
+            </form>
+            </div>
+            <div class="col-sm-6">
+              <form action="{% url 'home:about' %}">
+                <button type="submit" class="btn btn-light">அறிமுகம்</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        </div>
+    </main>
+  </div>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+

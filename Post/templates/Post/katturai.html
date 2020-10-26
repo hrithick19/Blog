@@ -1,0 +1,52 @@
+{%extends 'home/layout.html' %}
+  {%block head%}
+    {% load static %} 
+    <link href="{% static 'Post/css/katturai.css' %}" rel="stylesheet">
+    <meta name="keywords" content="tamil essays,tamil katturaigal,katturai,
+    {% for k in katturais %}
+    tamil essays on {{k.katturai_title}}, {{k.katturai_title}} தமிழ் கட்டுரை
+    {%endfor%}
+    ">
+    <meta name="description" content="அகராதி தமிழ் கட்டுரை,Ahrathi tamil katturaigal">
+  {%endblock%}    
+    {%block title%}
+      வலைப்பதிவு-கட்டுரை
+    {%endblock%}
+  {%block main%}
+  <main>
+    <div class="container">
+      <h2>கட்டுரைகள் </h2>
+      <hr>
+      <ul>
+        {% for katturai in katturais %}
+        <li>
+          <h6 class="d-flex flex-direction-row"><a href="{% url 'Post:full_katturai' katturai.id %}">{{katturai.katturai_title}}</a>
+            {% if katturai in recent %}
+              <sup>
+                <div class="new-badge">
+                  <span class="badge badge-pill badge-primary ">New</span>
+                </div>
+              </sup>
+            {% endif %}
+          </h6>
+        </li>
+        {%endfor%}
+      </ul>
+    </div>
+  </main>
+{%endblock%}
+{%block footer%}
+  <div class="bg-light py-2 w-100">
+    <div class="container text-center">
+      <p class="text-muted mb-0 py-2">© 2020 All rights reserved.</p>
+    </div>
+  </div>
+{%endblock%}
+
+
+
+
+
+
+
+
